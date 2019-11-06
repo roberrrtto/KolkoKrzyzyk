@@ -1,8 +1,7 @@
 package toe.tac.tic;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 
 public class Main {
@@ -21,3 +20,4 @@ public class Main {
 	}
 
 }
+// komentarz testowy
