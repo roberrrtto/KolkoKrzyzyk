@@ -3,25 +3,24 @@ package toe.tac.tic;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainPanel extends JPanel {
+public class GamePanel extends JPanel {
 
     //    JSplitPane playerPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
-    RoundPanel roundPanel = new RoundPanel();
-    JPanel middlePanel = new JPanel();
     PlayerPanel playerPanel = new PlayerPanel();
+    BoardPanel boardPanel = new BoardPanel();
+    RoundPanel roundPanel = new RoundPanel();
 
 
 
-    MainPanel() {
+    GamePanel() {
         setLayout(new BorderLayout());
-        setBorder(BorderFactory.createEmptyBorder());
-
-//        playerPanel.setLeftComponent(player1);
+        setBackground(Color.ORANGE);
+//        setBorder(BorderFactory.createEmptyBorder());
 
 
 
         add(playerPanel, BorderLayout.PAGE_START);
+        add(boardPanel, BorderLayout.CENTER);
         add(roundPanel, BorderLayout.PAGE_END);
-        add(middlePanel);
     }
 }

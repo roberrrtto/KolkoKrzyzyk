@@ -4,11 +4,11 @@ import javax.swing.*;
 
 public class GameFrame extends JFrame {
     public GameFrame() {
-        setSize(500,600);
+        setSize(600,730);
         setTitle("TicTacToe");
         setResizable(false);
 
-        MainPanel mainPanel = new MainPanel();
-        add(mainPanel);
+        GamePanel gamePanel = new GamePanel();
+        add(gamePanel);
     }
 }
