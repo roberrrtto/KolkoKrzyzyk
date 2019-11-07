@@ -1,14 +1,8 @@
 package toe.tac.tic;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JPanel;
-
-public class MyJPanel extends JPanel {
+public class BoardPanel extends JPanel {
 	JButton one, two, three, four, five, six, seven, eight, nine;
 	boolean x = true;
 	boolean a = true;
@@ -20,7 +14,7 @@ public class MyJPanel extends JPanel {
 	boolean g = true;
 	boolean h = true;
 	boolean i = true;
-	public MyJPanel() {
+	public BoardPanel() {
 		
 		setLayout(null);
 		one = new JButton();
