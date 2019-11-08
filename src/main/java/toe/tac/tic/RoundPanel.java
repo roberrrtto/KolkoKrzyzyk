@@ -6,8 +6,7 @@ import java.awt.*;
 public class RoundPanel extends JPanel {
 
     JLabel round;
-    int roundNo = 3;
-//    BoxLayout boxLayout = new BoxLayout(new RoundPanel(), BoxLayout.LINE_AXIS);
+    int roundNo = 1;
 
     RoundPanel() {
         round = new JLabel("Round: " + roundNo, SwingConstants.CENTER);
@@ -18,5 +17,13 @@ public class RoundPanel extends JPanel {
 
 
         add(round);
+    }
+
+    public int getRoundNo() {
+        return roundNo;
+    }
+
+    public void setRoundNo(int roundNo) {
+        this.roundNo = roundNo;
     }
 }

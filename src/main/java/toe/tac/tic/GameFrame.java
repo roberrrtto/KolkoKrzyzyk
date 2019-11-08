@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class GameFrame extends JFrame {
     public GameFrame() {
-        setSize(600,730);
+        setSize(600,735);
         setTitle("TicTacToe");
         setResizable(false);
 

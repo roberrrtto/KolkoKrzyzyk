@@ -7,6 +7,8 @@ public class PlayerPanel extends JPanel {
 
     BorderLayout borderLayout = new BorderLayout();
     JLabel playerX, playerO, score;
+    int scoreX = new GameEngine().getWonGameX();
+    int scoreO = new GameEngine().getWonGameO();
 
     PlayerPanel() {
 
@@ -29,7 +31,7 @@ public class PlayerPanel extends JPanel {
 //        Border margin = new EmptyBorder(10,10,10,10);
 //        playerX.setBorder(new CompoundBorder(border, margin));
 
-        score = new JLabel("Score: 2 - 1", SwingConstants.CENTER);
+        score = new JLabel("Score: " + scoreX + "-" + scoreO, SwingConstants.CENTER);
         score.setPreferredSize(new Dimension(250,50));
         score.setFont(score.getFont().deriveFont(20f));
         score.setOpaque(true);

@@ -10,13 +10,16 @@ public class GamePanel extends JPanel {
     BoardPanel boardPanel = new BoardPanel();
     RoundPanel roundPanel = new RoundPanel();
 
+///*
 
+// */
 
     GamePanel() {
         setLayout(new BorderLayout());
         setBackground(Color.ORANGE);
 //        setBorder(BorderFactory.createEmptyBorder());
 
+        roundPanel.setRoundNo(boardPanel.getRoundNo());
 
 
         add(playerPanel, BorderLayout.PAGE_START);
