@@ -19,10 +19,9 @@ public class Main {
 		});
 	}
 
-<<<<<<< HEAD
+
 	// test
 }
-=======
-}
+
 // komentarz testowy
->>>>>>> e5229fb31c77e22b199c4950a67e5732dfe8e252
+
