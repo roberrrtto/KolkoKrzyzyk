@@ -3,7 +3,7 @@ package toe.tac.tic;
 public class GameEngine {
     RoundPanel roundPanel1;
     private int wonGameX;
-    private int invalid = 1;
+
     private int wonGameO;
 
     public int getWonGameX() {
@@ -14,13 +14,13 @@ public class GameEngine {
         this.wonGameX = wonGameX;
     }
 
-    public int getInvalid() {
-        return invalid;
-    }
-
-    public void setInvalid(int invalid) {
-        this.invalid = invalid;
-    }
+//    public int getInvalid() {
+//        return invalid;
+//    }
+//
+//    public void setInvalid(int invalid) {
+//        this.invalid = invalid;
+//    }
 
     public int getWonGameO() {
         return wonGameO;
