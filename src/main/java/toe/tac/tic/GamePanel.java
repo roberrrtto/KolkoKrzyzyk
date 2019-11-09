@@ -16,7 +16,7 @@ public class GamePanel extends JPanel {
 
     GamePanel() {
 
-        while (!boardPanel.winnerX) {
+        
 
         setLayout(new BorderLayout());
         setBackground(Color.ORANGE);
@@ -28,8 +28,6 @@ public class GamePanel extends JPanel {
         add(playerPanel, BorderLayout.PAGE_START);
         add(boardPanel, BorderLayout.CENTER);
         add(roundPanel, BorderLayout.PAGE_END);
-        }
-//        repaint();
-        revalidate();
+        
     }
 }

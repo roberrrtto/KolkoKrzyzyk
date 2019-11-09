@@ -241,23 +241,3 @@ public class BoardPanel extends JPanel {
 	}
 }
 
-
-
-//	boolean oneFieldX = false;
-//	boolean oneFieldO = false;
-//	boolean twoFieldX = false;
-//	boolean twoFieldO = false;
-//	boolean threeFieldX = false;
-//	boolean threeFieldO = false;
-//	boolean fourFieldX = false;
-//	boolean fourFieldO = false;
-//	boolean fiveFieldX = false;
-//	boolean fiveFieldO = false;
-//	boolean sixFieldX = false;
-//	boolean sixFieldO = false;
-//	boolean sevenFieldX = false;
-//	boolean sevenFieldO = false;
-//	boolean eightFieldX = false;
-//	boolean eightFieldO = false;
-//	boolean nineFieldX = false;
-//	boolean nineFieldO = false;
