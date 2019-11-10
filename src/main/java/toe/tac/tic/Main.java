@@ -3,7 +3,7 @@ package toe.tac.tic;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainKrzysiek {
+public class Main {
 
     public static void main(String[] args) {
 

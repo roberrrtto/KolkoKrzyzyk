@@ -6,37 +6,37 @@ import java.util.ArrayList;
 
 public class BoardPanel extends JPanel {
 
-    PlayerPanel playerPanel = new PlayerPanel();
-    RoundPanel roundPanel = new RoundPanel();
+	PlayerPanel playerPanel = new PlayerPanel();
+	RoundPanel roundPanel = new RoundPanel();
 
 	JButton one, two, three, four, five, six, seven, eight, nine;
-    ArrayList<JButton> buttonList = new ArrayList<>();
+	ArrayList<JButton> buttonList = new ArrayList<>();
 	boolean oneField, twoField, threeField, fourField, fiveField, sixField, sevenField, eightField, nineField;
 	boolean winnerX, winnerO;
-    boolean x = true;
+	boolean x = true;
 
-    public void resetAll() { // czyścimy pola przed kolejną rundą
-		 x = true;
-		 winnerX = false;
-		 winnerO = false;
-		 oneField = false;
-		 twoField = false;
-		 threeField = false;
-		 fourField = false;
-		 fiveField = false;
-		 sixField = false;
-		 sevenField = false;
-		 eightField = false;
-		 nineField = false;
+	public void resetAll() { // czyścimy pola przed kolejną rundą
+		x = true;
+		winnerX = false;
+		winnerO = false;
+		oneField = false;
+		twoField = false;
+		threeField = false;
+		fourField = false;
+		fiveField = false;
+		sixField = false;
+		sevenField = false;
+		eightField = false;
+		nineField = false;
 
-		 for (JButton jb : buttonList) {
+		for (JButton jb : buttonList) {
 			jb.setText("");
 			jb.setForeground(Color.BLACK);
-		 }
+		}
 	}
 
-	public void markField(boolean fieldName, JButton buttonName) { //Wypisanie X lub O jeśli pole jest wolne
-		if(!fieldName) {
+	public void markField(boolean fieldName, JButton buttonName) { // Wypisanie X lub O jeśli pole jest wolne
+		if (!fieldName) {
 			if (x) {
 				buttonName.setText("X");
 				x = false;
@@ -56,48 +56,53 @@ public class BoardPanel extends JPanel {
 			three.setForeground(Color.RED);
 		} else if (four.getText().equals("X") && five.getText().equals("X") && six.getText().equals("X")) {
 			winnerX = true;
-            four.setForeground(Color.RED);
-            five.setForeground(Color.RED);
-            six.setForeground(Color.RED);
+			four.setForeground(Color.RED);
+			five.setForeground(Color.RED);
+			six.setForeground(Color.RED);
 		} else if (seven.getText().equals("X") && eight.getText().equals("X") && nine.getText().equals("X")) {
 			winnerX = true;
-            seven.setForeground(Color.RED);
-            eight.setForeground(Color.RED);
-            nine.setForeground(Color.RED);
+			seven.setForeground(Color.RED);
+			eight.setForeground(Color.RED);
+			nine.setForeground(Color.RED);
 		} else if (one.getText().equals("X") && four.getText().equals("X") && seven.getText().equals("X")) {
 			winnerX = true;
-            one.setForeground(Color.RED);
-            four.setForeground(Color.RED);
-            seven.setForeground(Color.RED);
+			one.setForeground(Color.RED);
+			four.setForeground(Color.RED);
+			seven.setForeground(Color.RED);
 		} else if (two.getText().equals("X") && five.getText().equals("X") && eight.getText().equals("X")) {
 			winnerX = true;
-            two.setForeground(Color.RED);
-            five.setForeground(Color.RED);
-            eight.setForeground(Color.RED);
+			two.setForeground(Color.RED);
+			five.setForeground(Color.RED);
+			eight.setForeground(Color.RED);
 		} else if (three.getText().equals("X") && six.getText().equals("X") && nine.getText().equals("X")) {
 			winnerX = true;
-            three.setForeground(Color.RED);
-            six.setForeground(Color.RED);
-            nine.setForeground(Color.RED);
+			three.setForeground(Color.RED);
+			six.setForeground(Color.RED);
+			nine.setForeground(Color.RED);
 		} else if (one.getText().equals("X") && five.getText().equals("X") && nine.getText().equals("X")) {
 			winnerX = true;
-            one.setForeground(Color.RED);
-            five.setForeground(Color.RED);
-            nine.setForeground(Color.RED);
+			one.setForeground(Color.RED);
+			five.setForeground(Color.RED);
+			nine.setForeground(Color.RED);
 		} else if (seven.getText().equals("X") && five.getText().equals("X") && three.getText().equals("X")) {
 			winnerX = true;
-            seven.setForeground(Color.RED);
-            five.setForeground(Color.RED);
-            three.setForeground(Color.RED);
+			seven.setForeground(Color.RED);
+			five.setForeground(Color.RED);
+			three.setForeground(Color.RED);
 		}
 		if (winnerX) {
-            roundPanel.setNextRoundButtonVisible(true); //odkrycie przycisku Next round
-            playerPanel.setScoreX(playerPanel.getScoreX() + 1); //dodanie +1 do wyniku X
-            playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
-        }
-        if (playerPanel.getScoreX() == 3) {
-            JOptionPane.showMessageDialog(null, "Baloniki latają, X wygrywa", "X debeściak", 1); // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
-        }
+			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
+			playerPanel.setScoreX(playerPanel.getScoreX() + 1); // dodanie +1 do wyniku X
+			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie
+																													// nowego
+																													// wyniku
+		}
+		if (playerPanel.getScoreX() == 3) {
+			JOptionPane.showMessageDialog(null, "Baloniki latają, X wygrywa", "X debeściak", 1); // sprawdzenie czy
+																									// osiągnięto wynik
+																									// 3, jeśli tak to
+																									// info o wygranej
+		}
 	}
 
 	public void isWinnerO() { // sprawdzenie czy O wygrywa rundę
@@ -108,48 +113,50 @@ public class BoardPanel extends JPanel {
 			three.setForeground(Color.BLUE);
 		} else if (four.getText().equals("O") && five.getText().equals("O") && six.getText().equals("O")) {
 			winnerO = true;
-            four.setForeground(Color.BLUE);
-            five.setForeground(Color.BLUE);
-            six.setForeground(Color.BLUE);
+			four.setForeground(Color.BLUE);
+			five.setForeground(Color.BLUE);
+			six.setForeground(Color.BLUE);
 		} else if (seven.getText().equals("O") && eight.getText().equals("O") && nine.getText().equals("O")) {
 			winnerO = true;
-            seven.setForeground(Color.BLUE);
-            eight.setForeground(Color.BLUE);
-            nine.setForeground(Color.BLUE);
+			seven.setForeground(Color.BLUE);
+			eight.setForeground(Color.BLUE);
+			nine.setForeground(Color.BLUE);
 		} else if (one.getText().equals("O") && four.getText().equals("O") && seven.getText().equals("O")) {
 			winnerO = true;
-            one.setForeground(Color.BLUE);
-            four.setForeground(Color.BLUE);
-            seven.setForeground(Color.BLUE);
+			one.setForeground(Color.BLUE);
+			four.setForeground(Color.BLUE);
+			seven.setForeground(Color.BLUE);
 		} else if (two.getText().equals("O") && five.getText().equals("O") && eight.getText().equals("O")) {
 			winnerO = true;
-            two.setForeground(Color.BLUE);
-            five.setForeground(Color.BLUE);
-            eight.setForeground(Color.BLUE);
+			two.setForeground(Color.BLUE);
+			five.setForeground(Color.BLUE);
+			eight.setForeground(Color.BLUE);
 		} else if (three.getText().equals("O") && six.getText().equals("O") && nine.getText().equals("O")) {
 			winnerO = true;
-            three.setForeground(Color.BLUE);
-            six.setForeground(Color.BLUE);
-            nine.setForeground(Color.BLUE);
+			three.setForeground(Color.BLUE);
+			six.setForeground(Color.BLUE);
+			nine.setForeground(Color.BLUE);
 		} else if (one.getText().equals("O") && five.getText().equals("O") && nine.getText().equals("O")) {
 			winnerO = true;
-            one.setForeground(Color.BLUE);
-            five.setForeground(Color.BLUE);
-            nine.setForeground(Color.BLUE);
+			one.setForeground(Color.BLUE);
+			five.setForeground(Color.BLUE);
+			nine.setForeground(Color.BLUE);
 		} else if (seven.getText().equals("O") && five.getText().equals("O") && three.getText().equals("O")) {
 			winnerO = true;
-            seven.setForeground(Color.BLUE);
-            five.setForeground(Color.BLUE);
-            three.setForeground(Color.BLUE);
+			seven.setForeground(Color.BLUE);
+			five.setForeground(Color.BLUE);
+			three.setForeground(Color.BLUE);
 		}
 		if (winnerO) {
-            roundPanel.setNextRoundButtonVisible(true); //odkrycie przycisku Next round
-            playerPanel.setScoreO(playerPanel.getScoreO() + 1); //dodanie +1 do wyniku O
-            playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
-        }
-        if (playerPanel.getScoreO() == 3) { // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
-            JOptionPane.showMessageDialog(null, "Baloniki latają, O wygrywa", "O debeściako", 1);
-        }
+			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
+			playerPanel.setScoreO(playerPanel.getScoreO() + 1); // dodanie +1 do wyniku O
+			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie
+																													// nowego
+																													// wyniku
+		}
+		if (playerPanel.getScoreO() == 3) { // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
+			JOptionPane.showMessageDialog(null, "Baloniki latają, O wygrywa", "O debeściako", 1);
+		}
 	}
 
 	public BoardPanel() {
@@ -241,7 +248,7 @@ public class BoardPanel extends JPanel {
 			isWinnerO();
 		});
 
-        // wypełnienie ArrayList<JButton> buttonList
+		// wypełnienie ArrayList<JButton> buttonList
 		buttonList.add(one);
 		buttonList.add(two);
 		buttonList.add(three);
@@ -252,7 +259,7 @@ public class BoardPanel extends JPanel {
 		buttonList.add(eight);
 		buttonList.add(nine);
 
-        add(one);
+		add(one);
 		add(two);
 		add(three);
 		add(four);
@@ -263,18 +270,16 @@ public class BoardPanel extends JPanel {
 		add(nine);
 
 		// dodanie akcji dla przycisku Next Round
-        roundPanel.nextRoundButton.addActionListener(e -> {
-            resetAll();
-            roundPanel.setRoundCounter(roundPanel.getRoundCounter() + 1);   //dodanie +1 do liczby rund
-            roundPanel.roundDisplay.setText("Round: " + roundPanel.getRoundCounter());  //wypisanie kolejnej rundy
-            roundPanel.setNextRoundButtonVisible(false); //ukrycie przycisku Next round
-        });
-	}
+		roundPanel.nextRoundButton.addActionListener(e -> {
+			resetAll();
+			roundPanel.setRoundCounter(roundPanel.getRoundCounter() + 1); // dodanie +1 do liczby rund
+			roundPanel.roundDisplay.setText("Round: " + roundPanel.getRoundCounter()); // wypisanie kolejnej rundy
+			roundPanel.setNextRoundButtonVisible(false); // ukrycie przycisku Next round
+		});
 
+	}
 }
 
-<<<<<<< HEAD
-=======
 // Notki Krzyśka. Wyczyścimy przy ostatecznej wersji.
 
 //		try {
@@ -311,4 +316,3 @@ public class BoardPanel extends JPanel {
 //        fieldList.add(sevenField);
 //        fieldList.add(eightField);
 //        fieldList.add(nineField);
->>>>>>> 9c2fb824dc5fe54721a98926306b17893da94e24
