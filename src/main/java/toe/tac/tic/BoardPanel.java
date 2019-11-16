@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+import static toe.tac.tic.Main.gameFrame;
+import static toe.tac.tic.Main.startJFrame;
+
 public class BoardPanel extends JPanel {
 	
 	PlayerPanel playerPanel = new PlayerPanel();
@@ -33,6 +36,16 @@ public class BoardPanel extends JPanel {
 			jb.setText("");
 			jb.setForeground(Color.BLACK);
 		}
+	}
+
+	public void clearAllFields() { // czyści wszystko po wygranej grze
+		resetAll();
+		playerPanel.setScoreX(0);
+		playerPanel.setScoreO(0);
+		roundPanel.setRoundCounter(1);
+		roundPanel.setNextRoundButtonVisible(false);
+		roundPanel.roundDisplay.setText("Round: " + roundPanel.getRoundCounter());
+		playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO());
 	}
 
 	public void markField(boolean fieldName, JButton buttonName) { // Wypisanie X lub O jeśli pole jest wolne
@@ -99,17 +112,10 @@ public class BoardPanel extends JPanel {
 																													// wyniku
 		}
 		if (playerPanel.getScoreX() == 3) {
-			JOptionPane.showMessageDialog(null, "Baloniki latają, X wygrywa", "X debeściak", 1); // sprawdzenie czy
-			if(true) {
-				StartJFrame startJFrame = new StartJFrame();
-				GameFrame gameFrame = new GameFrame();
-				StartPanel.gameFrameVisibility = false;
-				StartPanel.startFrameVisibility = true;
-				startJFrame.setVisible(StartPanel.startFrameVisibility);
-				gameFrame.dispose();
-			}																						// osiągnięto wynik
-																									// 3, jeśli tak to
-																									// info o wygranej
+			JOptionPane.showMessageDialog(null, "Baloniki latają, X wygrywa", "X debeściak", 1); // sprawdzenie czy osiągnięto wynik 3, jesli tak to info o wygranej
+			startJFrame.setVisible(true);
+			gameFrame.setVisible(false);
+			clearAllFields();
 		}
 	}
 
@@ -164,12 +170,9 @@ public class BoardPanel extends JPanel {
 		}
 		if (playerPanel.getScoreO() == 3) { // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
 			JOptionPane.showMessageDialog(null, "Baloniki latają, O wygrywa", "O debeściako", 1);
-			StartJFrame startJFrame = new StartJFrame();
-			GameFrame gameFrame = new GameFrame();
-			StartPanel.gameFrameVisibility = false;
-			StartPanel.startFrameVisibility = true;
-			startJFrame.setVisible(StartPanel.startFrameVisibility);
-			gameFrame.dispose();
+			startJFrame.setVisible(true);
+			gameFrame.setVisible(false);
+			clearAllFields();
 		}
 	}
 
@@ -204,7 +207,6 @@ public class BoardPanel extends JPanel {
 			threeField = true;
 			isWinnerX();
 			isWinnerO();
-//			resetAll();
 
 		});
 
@@ -293,63 +295,3 @@ public class BoardPanel extends JPanel {
 
 	}
 }
-
-// Notki Krzyśka. Wyczyścimy przy ostatecznej wersji.
-
-//		try {
-//			TimeUnit.SECONDS.sleep(1);
-//		} catch (InterruptedException k) {
-//			k.printStackTrace();
-//		}
-
-//	boolean oneFieldX = false;
-//	boolean oneFieldO = false;
-//	boolean twoFieldX = false;
-//	boolean twoFieldO = false;
-//	boolean threeFieldX = false;
-//	boolean threeFieldO = false;
-//	boolean fourFieldX = false;
-//	boolean fourFieldO = false;
-//	boolean fiveFieldX = false;
-//	boolean fiveFieldO = false;
-//	boolean sixFieldX = false;
-//	boolean sixFieldO = false;
-//	boolean sevenFieldX = false;
-//	boolean sevenFieldO = false;
-//	boolean eightFieldX = false;
-//	boolean eightFieldO = false;
-//	boolean nineFieldX = false;
-//	boolean nineFieldO = false;
-
-//        fieldList.add(oneField);
-//        fieldList.add(twoField);
-//        fieldList.add(threeField);
-//        fieldList.add(fourField);
-//        fieldList.add(fiveField);
-//        fieldList.add(sixField);
-//        fieldList.add(sevenField);
-//        fieldList.add(eightField);
-//        fieldList.add(nineField);
-
-//	public void sleep() {
-//		try {
-//			Thread.sleep(1115);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	public void animation(JButton jb1, JButton jb2, JButton jb3) {
-//		for (int i = 0; i < 10000005; i++) {
-//			jb3.setForeground(Color.BLACK);
-//			jb1.setForeground(Color.RED);
-//
-//			jb1.setForeground(Color.BLACK);
-//			jb2.setForeground(Color.RED);
-//
-//			jb2.setForeground(Color.BLACK);
-//			jb3.setForeground(Color.RED);
-//
-//		}
-//	}
-

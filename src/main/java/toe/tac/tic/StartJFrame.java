@@ -2,6 +2,7 @@ package toe.tac.tic;
 
 import javax.swing.JFrame;
 
+
 public class StartJFrame extends JFrame{
 	
 	public StartJFrame() {

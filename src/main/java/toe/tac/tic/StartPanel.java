@@ -2,38 +2,34 @@ package toe.tac.tic;
 
 import javax.swing.*;
 
-public class StartPanel extends JPanel {
-	static boolean startFrameVisibility = true;
-	static boolean gameFrameVisibility = false;
-	static JButton play, exit;
+import static toe.tac.tic.Main.gameFrame;
+import static toe.tac.tic.Main.startJFrame;
 
-	JLabel gameName, question;
+public class StartPanel extends JPanel {
+
+	private static JButton play, exit;
+	private JLabel gameName, question;
 	
 	public StartPanel() {
 		
 		setLayout(null);
 
-		gameName = new JLabel("TicTacTao", SwingConstants.CENTER);
+		gameName = new JLabel("TicTacToe", SwingConstants.CENTER);
 		gameName.setBounds(100, 100, 400, 100);
 		gameName.setFont(gameName.getFont().deriveFont(70f));
 		
 		question = new JLabel("Do you want to play a game?", SwingConstants.CENTER);
 		question.setBounds(100, 300, 400, 100);
 		question.setFont(question.getFont().deriveFont(20f));
-		
+
 		play = new JButton();
 		play.setBounds(150, 500, 100, 50);
 		play.setText("PLAY");
 		play.addActionListener(e -> {
- 				StartJFrame startJFrame = new StartJFrame();
- 				GameFrame gameFrame = new GameFrame();
- 				startFrameVisibility = false;
- 				gameFrameVisibility = true;
- 				startJFrame.setVisible(startFrameVisibility);
- 				gameFrame.setVisible(gameFrameVisibility);
- 			
- 		});
-		
+			gameFrame.setVisible(true);
+			startJFrame.setVisible(false);
+		});
+
 		exit = new JButton();
 		exit.setBounds(350, 500, 100, 50);
 		exit.setText("EXIT");

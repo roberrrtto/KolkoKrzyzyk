@@ -7,7 +7,7 @@ public class RoundPanel extends JPanel { //RoundPanel wyświetla numer rundy i d
 
     JLabel roundDisplay;
     JButton nextRoundButton;
-    int roundCounter = 1;
+    private int roundCounter = 1;
 
     //metoda do której odwołuje się z poziomu BoardPanel. Służy do chowania/pokazywania przycisku Next round
     public void setNextRoundButtonVisible(boolean b) {
