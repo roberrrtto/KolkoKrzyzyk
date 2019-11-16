@@ -48,6 +48,7 @@ public class BoardPanel extends JPanel {
 		buttonName.setFont(buttonName.getFont().deriveFont(165f));
 	}
 
+
 	public void isWinnerX() { // sprawdzenie czy X wygrywa rundę
 		if (one.getText().equals("X") && two.getText().equals("X") && three.getText().equals("X")) {
 			winnerX = true;
@@ -309,3 +310,25 @@ public class BoardPanel extends JPanel {
 //        fieldList.add(sevenField);
 //        fieldList.add(eightField);
 //        fieldList.add(nineField);
+
+//	public void sleep() {
+//		try {
+//			Thread.sleep(1115);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	public void animation(JButton jb1, JButton jb2, JButton jb3) {
+//		for (int i = 0; i < 10000005; i++) {
+//			jb3.setForeground(Color.BLACK);
+//			jb1.setForeground(Color.RED);
+//
+//			jb1.setForeground(Color.BLACK);
+//			jb2.setForeground(Color.RED);
+//
+//			jb2.setForeground(Color.BLACK);
+//			jb3.setForeground(Color.RED);
+//
+//		}
+//	}
