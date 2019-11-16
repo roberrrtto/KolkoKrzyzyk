@@ -99,7 +99,14 @@ public class BoardPanel extends JPanel {
 		}
 		if (playerPanel.getScoreX() == 3) {
 			JOptionPane.showMessageDialog(null, "Baloniki latają, X wygrywa", "X debeściak", 1); // sprawdzenie czy
-																									// osiągnięto wynik
+			if(true) {
+				StartJFrame startJFrame = new StartJFrame();
+				GameFrame gameFrame = new GameFrame();
+				StartPanel.gameFrameVisibility = false;
+				StartPanel.startFrameVisibility = true;
+				startJFrame.setVisible(StartPanel.startFrameVisibility);
+				gameFrame.dispose();
+			}																						// osiągnięto wynik
 																									// 3, jeśli tak to
 																									// info o wygranej
 		}
@@ -156,6 +163,12 @@ public class BoardPanel extends JPanel {
 		}
 		if (playerPanel.getScoreO() == 3) { // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
 			JOptionPane.showMessageDialog(null, "Baloniki latają, O wygrywa", "O debeściako", 1);
+			StartJFrame startJFrame = new StartJFrame();
+			GameFrame gameFrame = new GameFrame();
+			StartPanel.gameFrameVisibility = false;
+			StartPanel.startFrameVisibility = true;
+			startJFrame.setVisible(StartPanel.startFrameVisibility);
+			gameFrame.dispose();
 		}
 	}
 
