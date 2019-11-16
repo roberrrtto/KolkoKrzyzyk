@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class BoardPanel extends JPanel {
-
+	
 	PlayerPanel playerPanel = new PlayerPanel();
 	RoundPanel roundPanel = new RoundPanel();
 
