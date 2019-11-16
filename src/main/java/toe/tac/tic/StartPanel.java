@@ -3,8 +3,10 @@ package toe.tac.tic;
 import javax.swing.*;
 
 public class StartPanel extends JPanel {
-	
+	static boolean startFrameVisibility = true;
+	static boolean gameFrameVisibility = false;
 	static JButton play, exit;
+
 	JLabel gameName, question;
 	
 	public StartPanel() {
@@ -22,6 +24,15 @@ public class StartPanel extends JPanel {
 		play = new JButton();
 		play.setBounds(150, 500, 100, 50);
 		play.setText("PLAY");
+		play.addActionListener(e -> {
+ 				StartJFrame startJFrame = new StartJFrame();
+ 				GameFrame gameFrame = new GameFrame();
+ 				startFrameVisibility = false;
+ 				gameFrameVisibility = true;
+ 				startJFrame.setVisible(startFrameVisibility);
+ 				gameFrame.setVisible(gameFrameVisibility);
+ 			
+ 		});
 		
 		exit = new JButton();
 		exit.setBounds(350, 500, 100, 50);
