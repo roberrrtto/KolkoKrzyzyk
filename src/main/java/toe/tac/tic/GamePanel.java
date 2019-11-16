@@ -8,6 +8,7 @@ public class GamePanel extends JPanel { // GamePanel skleja wszystkie panele do 
     BoardPanel boardPanel = new BoardPanel();
 
     GamePanel() {
+
         setLayout(new BorderLayout());
 
         add(boardPanel.playerPanel, BorderLayout.PAGE_START);
