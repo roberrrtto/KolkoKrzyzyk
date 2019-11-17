@@ -1,10 +1,9 @@
 package toe.tac.tic;
 
-import javax.swing.JFrame;
-
+import javax.swing.*;
 
 public class StartJFrame extends JFrame{
-	
+
 	public StartJFrame() {
 		setSize(600, 735);
 		setTitle("Main Menu");
@@ -12,7 +11,7 @@ public class StartJFrame extends JFrame{
 		
 		StartPanel startPanel = new StartPanel();
 		add(startPanel);
-		
+
 	}
 	
 }
