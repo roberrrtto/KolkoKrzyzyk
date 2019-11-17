@@ -1,6 +1,9 @@
 package toe.tac.tic;
 
-import javax.swing.*;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
 
 public class GameFrame extends JFrame {
     public GameFrame() {
@@ -8,7 +11,10 @@ public class GameFrame extends JFrame {
         setSize(600,735);
         setTitle("TicTacToe");
         setResizable(false);
+        setLocationRelativeTo(null);
         GamePanel gamePanel = new GamePanel();
         add(gamePanel);
+        Image icon = Toolkit.getDefaultToolkit().getImage("Tic-tac-toe-512.png");  
+		setIconImage(icon);
     }
 }

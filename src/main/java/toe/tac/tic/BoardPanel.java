@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static toe.tac.tic.Main.gameFrame;
 import static toe.tac.tic.Main.startJFrame;
 
+
 public class BoardPanel extends JPanel {
 	
 	PlayerPanel playerPanel = new PlayerPanel();
