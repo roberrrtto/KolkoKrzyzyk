@@ -8,6 +8,7 @@ import java.util.List;
 import static toe.tac.tic.Main.gameFrame;
 import static toe.tac.tic.Main.startJFrame;
 
+
 public class BoardPanel extends JPanel {
 	int test = 0;
 	int test2 = 0;
