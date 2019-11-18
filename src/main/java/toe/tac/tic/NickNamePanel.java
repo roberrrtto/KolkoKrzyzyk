@@ -10,7 +10,7 @@ public class NickNamePanel extends JPanel {
     public NickNamePanel() {
         setLayout(null);
 
-        ImageIcon icon = new ImageIcon("/Users/kavit/Downloads/tic-tac-toe (1).png");
+        ImageIcon icon = new ImageIcon("/Users/kavit/Downloads/clear (1).png");
         xLabel = new JLabel(icon, SwingConstants.CENTER);
         xLabel.setBounds(200, 150, 200, 100);
         xLabel.setFont(xLabel.getFont().deriveFont(70f));

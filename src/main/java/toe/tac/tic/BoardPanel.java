@@ -10,6 +10,9 @@ import static toe.tac.tic.Main.startJFrame;
 
 
 public class BoardPanel extends JPanel {
+
+	ImageIcon icon = new ImageIcon("/Users/kavit/Desktop/krzyzyk copy.png");
+
 	int test = 0;
 	int test2 = 0;
 	PlayerPanel playerPanel = new PlayerPanel();
@@ -66,7 +69,8 @@ public class BoardPanel extends JPanel {
 	public void markField(boolean fieldName, JButton buttonName) { // Wypisanie X lub O jeśli pole jest wolne
 		if (!fieldName) {
 			if (x) {
-				buttonName.setText("X");
+//				buttonName.setText("X");
+				buttonName.setIcon(icon);
 				x = false;
 			} else {
 				buttonName.setText("O");
