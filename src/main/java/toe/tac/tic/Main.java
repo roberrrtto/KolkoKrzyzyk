@@ -7,6 +7,7 @@ public class Main {
 
 	static StartJFrame startJFrame = new StartJFrame();
 	static GameFrame gameFrame = new GameFrame();
+	static WinFrame winFrame = new WinFrame();
 
     public static void main(String[] args) {
 
@@ -15,6 +16,7 @@ public class Main {
 			startJFrame.setVisible(true);
         	gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			gameFrame.setVisible(false);
+			winFrame.setVisible(false);
         });
     }
 }
