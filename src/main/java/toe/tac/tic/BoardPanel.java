@@ -77,6 +77,14 @@ public class BoardPanel extends JPanel {
 		buttonName.setFont(buttonName.getFont().deriveFont(165f));
 	}
 
+	private void isDraw() {
+		if (oneField && twoField &&	threeField
+			&& fourField && fiveField && sixField
+			&& sevenField && eightField && nineField) {
+			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
+		}
+	}
+
 	public void isWinnerX() { // sprawdzenie czy X wygrywa rundę
 		if (one.getText().equals("X") && two.getText().equals("X") && three.getText().equals("X")) {
 			winnerX = true;
@@ -191,6 +199,12 @@ public class BoardPanel extends JPanel {
 		}
 	}
 
+	private void isWinner() {
+		isWinnerX();
+		isWinnerO();
+		isDraw();
+	}
+
 	public BoardPanel() {
 		setLayout(null);
 
@@ -201,8 +215,7 @@ public class BoardPanel extends JPanel {
 			markField(oneField, one);
 			if(!oneField) {
 				oneField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
@@ -213,8 +226,7 @@ public class BoardPanel extends JPanel {
 			markField(twoField, two);
 			if (!twoField) {
 				twoField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
@@ -226,8 +238,7 @@ public class BoardPanel extends JPanel {
 			markField(threeField, three);
 			if (!threeField) {
 				threeField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
@@ -239,8 +250,7 @@ public class BoardPanel extends JPanel {
 			markField(fourField, four);
 			if (!fourField) {
 				fourField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
@@ -250,8 +260,7 @@ public class BoardPanel extends JPanel {
 			markField(fiveField, five);
 			if (!fiveField) {
 				fiveField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
@@ -262,8 +271,7 @@ public class BoardPanel extends JPanel {
 				markField(sixField, six);
 				if (!sixField) {
 					sixField = true;
-					isWinnerX();
-					isWinnerO();
+					isWinner();
 				}
 			});
 		}
@@ -274,8 +282,7 @@ public class BoardPanel extends JPanel {
 			markField(sevenField, seven);
 			if (!sevenField) {
 				sevenField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
@@ -285,8 +292,7 @@ public class BoardPanel extends JPanel {
 			markField(eightField, eight);
 			if (!eightField) {
 				eightField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
@@ -296,8 +302,7 @@ public class BoardPanel extends JPanel {
 			markField(nineField, nine);
 			if (!nineField) {
 				nineField = true;
-				isWinnerX();
-				isWinnerO();
+				isWinner();
 			}
 		});
 
