@@ -8,6 +8,8 @@ public class Main {
 	static StartJFrame startJFrame = new StartJFrame();
 	static GameFrame gameFrame = new GameFrame();
 	static NickNameFrame nickNameFrame = new NickNameFrame();
+	static WinFrame winFrame = new WinFrame();
+
 
     public static void main(String[] args) {
 
@@ -19,7 +21,8 @@ public class Main {
 
 			nickNameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			nickNameFrame.setVisible(true);
-		});
+			winFrame.setVisible(false);
+        });
     }
 }
 
