@@ -7,13 +7,14 @@ import java.util.List;
 
 import static toe.tac.tic.Main.gameFrame;
 import static toe.tac.tic.Main.startJFrame;
-
+import static toe.tac.tic.Main.winFrame;
 
 public class BoardPanel extends JPanel {
 	int test = 0;
 	int test2 = 0;
 	PlayerPanel playerPanel = new PlayerPanel();
 	RoundPanel roundPanel = new RoundPanel();
+	WinPanel winPanel = new WinPanel();
 
 	JButton one, two, three, four, five, six, seven, eight, nine;
 	List<JButton> buttonList = new ArrayList<>();
@@ -125,9 +126,10 @@ public class BoardPanel extends JPanel {
 			blockTheBoard();
 		}
 		if (playerPanel.getScoreX() == 3) {
-			JOptionPane.showMessageDialog(null, "Baloniki latają, X wygrywa", "X debeściak", 1); // sprawdzenie czy osiągnięto wynik 3, jesli tak to info o wygranej
-			startJFrame.setVisible(true);
+			WinPanel.winMessage.setText("The winner is Player X!"); // sprawdzenie czy osiągnięto wynik 3, jesli tak to info o wygranej
+			startJFrame.setVisible(false);
 			gameFrame.setVisible(false);
+			winFrame.setVisible(true);
 			clearAllFields();
 		}
 	}
@@ -181,9 +183,10 @@ public class BoardPanel extends JPanel {
 			blockTheBoard();
 		}
 		if (playerPanel.getScoreO() == 3) { // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
-			JOptionPane.showMessageDialog(null, "Baloniki latają, O wygrywa", "O debeściako", 1);
-			startJFrame.setVisible(true);
+			WinPanel.winMessage.setText("The winner is Player O!");
+			startJFrame.setVisible(false);
 			gameFrame.setVisible(false);
+			winFrame.setVisible(true);
 			clearAllFields();
 		}
 	}

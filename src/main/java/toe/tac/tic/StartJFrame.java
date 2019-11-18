@@ -16,7 +16,7 @@ public class StartJFrame extends JFrame{
 		StartPanel startPanel = new StartPanel();
 		add(startPanel);
 
-		Image icon = Toolkit.getDefaultToolkit().getImage("Tic-tac-toe-512.png");  
+		Image icon = Toolkit.getDefaultToolkit().getImage("unnamed.png");  
 		setIconImage(icon);
 	}
 }

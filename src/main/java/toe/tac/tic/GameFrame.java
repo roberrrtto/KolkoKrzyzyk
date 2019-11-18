@@ -14,7 +14,7 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
         GamePanel gamePanel = new GamePanel();
         add(gamePanel);
-        Image icon = Toolkit.getDefaultToolkit().getImage("Tic-tac-toe-512.png");  
+        Image icon = Toolkit.getDefaultToolkit().getImage("unnamed.png");  
 		setIconImage(icon);
     }
 }
