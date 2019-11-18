@@ -6,8 +6,8 @@ import java.awt.*;
 public class PlayerPanel extends JPanel { // PlayerPanel wyświetla obu graczy + wynik
 
     JLabel playerX, playerO, scoreDisplay;
-    int scoreX;
-    int scoreO;
+    private int scoreX;
+    private int scoreO;
 
     PlayerPanel() {
 
@@ -35,7 +35,6 @@ public class PlayerPanel extends JPanel { // PlayerPanel wyświetla obu graczy +
         add(scoreDisplay, BorderLayout.CENTER);
         add(playerO, BorderLayout.LINE_END);
     }
-
 
     public JLabel getScoreDisplay() {
         return scoreDisplay;

@@ -3,21 +3,36 @@ package toe.tac.tic;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import static toe.tac.tic.Main.gameFrame;
 import static toe.tac.tic.Main.startJFrame;
 
 
 public class BoardPanel extends JPanel {
-	
+	int test = 0;
+	int test2 = 0;
 	PlayerPanel playerPanel = new PlayerPanel();
 	RoundPanel roundPanel = new RoundPanel();
 
 	JButton one, two, three, four, five, six, seven, eight, nine;
-	ArrayList<JButton> buttonList = new ArrayList<>();
+	List<JButton> buttonList = new ArrayList<>();
 	boolean oneField, twoField, threeField, fourField, fiveField, sixField, sevenField, eightField, nineField;
+//	List<Boolean> fieldList = new ArrayList<>();
 	boolean winnerX, winnerO;
 	boolean x = true;
+
+	public void blockTheBoard() { // blokuje tablice OX
+		oneField = true;
+		twoField = true;
+		threeField = true;
+		fourField = true;
+		fiveField = true;
+		sixField = true;
+		sevenField = true;
+		eightField = true;
+		nineField = true;
+	}
 
 	public void resetAll() { // czyścimy pola przed kolejną rundą
 		x = true;
@@ -32,7 +47,6 @@ public class BoardPanel extends JPanel {
 		sevenField = false;
 		eightField = false;
 		nineField = false;
-
 		for (JButton jb : buttonList) {
 			jb.setText("");
 			jb.setForeground(Color.BLACK);
@@ -61,7 +75,6 @@ public class BoardPanel extends JPanel {
 		}
 		buttonName.setFont(buttonName.getFont().deriveFont(165f));
 	}
-
 
 	public void isWinnerX() { // sprawdzenie czy X wygrywa rundę
 		if (one.getText().equals("X") && two.getText().equals("X") && three.getText().equals("X")) {
@@ -108,9 +121,8 @@ public class BoardPanel extends JPanel {
 		if (winnerX) {
 			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
 			playerPanel.setScoreX(playerPanel.getScoreX() + 1); // dodanie +1 do wyniku X
-			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie
-																													// nowego
-																													// wyniku
+			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
+			blockTheBoard();
 		}
 		if (playerPanel.getScoreX() == 3) {
 			JOptionPane.showMessageDialog(null, "Baloniki latają, X wygrywa", "X debeściak", 1); // sprawdzenie czy osiągnięto wynik 3, jesli tak to info o wygranej
@@ -165,9 +177,8 @@ public class BoardPanel extends JPanel {
 		if (winnerO) {
 			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
 			playerPanel.setScoreO(playerPanel.getScoreO() + 1); // dodanie +1 do wyniku O
-			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie
-																													// nowego
-																													// wyniku
+			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
+			blockTheBoard();
 		}
 		if (playerPanel.getScoreO() == 3) { // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
 			JOptionPane.showMessageDialog(null, "Baloniki latają, O wygrywa", "O debeściako", 1);
@@ -185,9 +196,11 @@ public class BoardPanel extends JPanel {
 		one.setOpaque(true);
 		one.addActionListener(e -> {
 			markField(oneField, one);
-			oneField = true;
-			isWinnerX();
-			isWinnerO();
+			if(!oneField) {
+				oneField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
 
 		two = new JButton();
@@ -195,74 +208,94 @@ public class BoardPanel extends JPanel {
 		two.setOpaque(true);
 		two.addActionListener(e -> {
 			markField(twoField, two);
-			twoField = true;
-			isWinnerX();
-			isWinnerO();
+			if (!twoField) {
+				twoField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
+
 
 		three = new JButton();
 		three.setBounds(0, 400, 200, 200);
 		three.setOpaque(true);
 		three.addActionListener(e -> {
 			markField(threeField, three);
-			threeField = true;
-			isWinnerX();
-			isWinnerO();
-
+			if (!threeField) {
+				threeField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
+
+
 
 		four = new JButton();
 		four.setBounds(200, 0, 200, 200);
 		four.addActionListener(e -> {
 			markField(fourField, four);
-			fourField = true;
-			isWinnerX();
-			isWinnerO();
+			if (!fourField) {
+				fourField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
 
 		five = new JButton();
 		five.setBounds(200, 200, 200, 200);
 		five.addActionListener(e -> {
 			markField(fiveField, five);
-			fiveField = true;
-			isWinnerX();
-			isWinnerO();
+			if (!fiveField) {
+				fiveField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
 
 		six = new JButton();
 		six.setBounds(200, 400, 200, 200);
-		six.addActionListener(e -> {
-			markField(sixField, six);
-			sixField = true;
-			isWinnerX();
-			isWinnerO();
-		});
+		if (!sixField) {
+			six.addActionListener(e -> {
+				markField(sixField, six);
+				if (!sixField) {
+					sixField = true;
+					isWinnerX();
+					isWinnerO();
+				}
+			});
+		}
 
 		seven = new JButton();
 		seven.setBounds(400, 0, 200, 200);
 		seven.addActionListener(e -> {
 			markField(sevenField, seven);
-			sevenField = true;
-			isWinnerX();
-			isWinnerO();
+			if (!sevenField) {
+				sevenField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
 
 		eight = new JButton();
 		eight.setBounds(400, 200, 200, 200);
 		eight.addActionListener(e -> {
 			markField(eightField, eight);
-			eightField = true;
-			isWinnerX();
-			isWinnerO();
+			if (!eightField) {
+				eightField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
 
 		nine = new JButton();
 		nine.setBounds(400, 400, 200, 200);
 		nine.addActionListener(e -> {
 			markField(nineField, nine);
-			nineField = true;
-			isWinnerX();
-			isWinnerO();
+			if (!nineField) {
+				nineField = true;
+				isWinnerX();
+				isWinnerO();
+			}
 		});
 
 		// wypełnienie ArrayList<JButton> buttonList
@@ -275,6 +308,17 @@ public class BoardPanel extends JPanel {
 		buttonList.add(seven);
 		buttonList.add(eight);
 		buttonList.add(nine);
+
+		// wypełnienie ArrayList<JButton> buttonList
+//		fieldList.add(oneField);
+//		fieldList.add(twoField);
+//		fieldList.add(threeField);
+//		fieldList.add(fourField);
+//		fieldList.add(fiveField);
+//		fieldList.add(sixField);
+//		fieldList.add(sevenField);
+//		fieldList.add(eightField);
+//		fieldList.add(nineField);
 
 		add(one);
 		add(two);
@@ -293,6 +337,5 @@ public class BoardPanel extends JPanel {
 			roundPanel.roundDisplay.setText("Round: " + roundPanel.getRoundCounter()); // wypisanie kolejnej rundy
 			roundPanel.setNextRoundButtonVisible(false); // ukrycie przycisku Next round
 		});
-
 	}
 }

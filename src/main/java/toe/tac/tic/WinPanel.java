@@ -1,7 +1,8 @@
 package toe.tac.tic;
 
-import java.net.*;
 import javax.swing.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class WinPanel extends JPanel {
 
