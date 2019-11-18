@@ -1,9 +1,7 @@
 package toe.tac.tic;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 
 public class StartJFrame extends JFrame{
@@ -16,7 +14,7 @@ public class StartJFrame extends JFrame{
 		StartPanel startPanel = new StartPanel();
 		add(startPanel);
 
-		Image icon = Toolkit.getDefaultToolkit().getImage("Tic-tac-toe-512.png");  
+		Image icon = Toolkit.getDefaultToolkit().getImage("/Users/kavit/Downloads/tic-tac-toe (1).png");
 		setIconImage(icon);
 	}
 }
