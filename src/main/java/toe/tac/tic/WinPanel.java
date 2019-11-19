@@ -16,7 +16,7 @@ public class WinPanel extends JPanel {
 
 	public WinPanel() {
 		setLayout(null);
-		image = Toolkit.getDefaultToolkit().createImage("win.gif");
+		image = Toolkit.getDefaultToolkit().createImage("src/win.gif");
 		winMessage = new JButton();
 		winMessage.setBounds(100, 210, 270, 40);
 		winMessage.setFont(winMessage.getFont().deriveFont(20f));

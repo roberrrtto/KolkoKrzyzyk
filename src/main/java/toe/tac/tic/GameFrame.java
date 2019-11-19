@@ -14,7 +14,7 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
         GamePanel gamePanel = new GamePanel();
         add(gamePanel);
-        Image icon = Toolkit.getDefaultToolkit().getImage("unnamed.png");  
+        Image icon = Toolkit.getDefaultToolkit().getImage("src/unnamed.png");  
 		setIconImage(icon);
     }
 }
