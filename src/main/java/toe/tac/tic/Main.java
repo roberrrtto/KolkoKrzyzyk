@@ -19,7 +19,7 @@ public class Main {
 			gameFrame.setVisible(true);
 
 			nickNameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			nickNameFrame.setVisible(true);
+			nickNameFrame.setVisible(false);
 			winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			winFrame.setVisible(false);
         });
