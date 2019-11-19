@@ -20,9 +20,9 @@ public class Main {
         	musicObject.playMusic(filePath);
         				
 			startJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			startJFrame.setVisible(true);
+			startJFrame.setVisible(false);
         	gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			gameFrame.setVisible(false);
+			gameFrame.setVisible(true);
 
 			nickNameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			nickNameFrame.setVisible(false);
