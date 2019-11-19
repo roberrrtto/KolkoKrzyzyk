@@ -1,5 +1,4 @@
 package toe.tac.tic;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,13 +16,15 @@ public class Main {
         	startJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			startJFrame.setVisible(true);
         	gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			gameFrame.setVisible(false);
+			gameFrame.setVisible(true);
 
 			nickNameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			nickNameFrame.setVisible(true);
+			winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			winFrame.setVisible(false);
         });
     }
+	
 }
 
 // <div>Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -39,3 +40,7 @@ IKONA:
 
 <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
  */
+
+
+
+//SWORDS >>> https://www.flaticon.com/free-icon/swords_1021261

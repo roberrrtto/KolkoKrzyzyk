@@ -12,8 +12,8 @@ public class StartJFrame extends JFrame{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		StartPanel startPanel = new StartPanel();
-		add(startPanel);
 
+		add(startPanel);
 
 		Image icon = Toolkit.getDefaultToolkit().getImage("unnamed.png");  
 		setIconImage(icon);
