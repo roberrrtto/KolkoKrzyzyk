@@ -232,15 +232,13 @@ public class BoardPanel extends JPanel {
 		verticalLine2.setBounds(410,0,10,620);
 
 		horizontalLine1 = new JLabel(iconH);
-<<<<<<< HEAD
 		horizontalLine1.setBounds(0, 195, 600, 10);
 		horizontalLine2 = new JLabel(iconH);
 		horizontalLine2.setBounds(0, 395, 600, 10);
-=======
+
 		horizontalLine1.setBounds(0,200,620,10);
 		horizontalLine2 = new JLabel(iconH);
 		horizontalLine2.setBounds(0,410,620,10);
->>>>>>> b3519b70cecb78e692d2cce89585ebfda436fad1
 
 		one = new JButton();
 		one.setBounds(0, 0, 200, 200);
