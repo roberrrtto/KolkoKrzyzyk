@@ -10,7 +10,6 @@ public class WinPanel extends JPanel {
     Image image;
     static JButton winMessage;
 
-<<<<<<< HEAD
 	public WinPanel() {
 		setLayout(null);
 		image = Toolkit.getDefaultToolkit().createImage("src/win.gif");
@@ -23,20 +22,7 @@ public class WinPanel extends JPanel {
 		});
 		add(winMessage);
 	}
-=======
-    public WinPanel() {
-        setLayout(null);
-        image = Toolkit.getDefaultToolkit().createImage("src/win.gif");
-        winMessage = new JButton();
-        winMessage.setBounds(100, 210, 270, 40);
-        winMessage.setFont(winMessage.getFont().deriveFont(20f));
-        winMessage.addActionListener(e -> {
-            winFrame.setVisible(false);
-            startJFrame.setVisible(true);
-        });
-        add(winMessage);
-    }
->>>>>>> 081ad104915775c145a21b45c4d4ee0a4991d848
+  
 
     @Override
     public void paintComponent(Graphics g) {
