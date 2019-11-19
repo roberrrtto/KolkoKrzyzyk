@@ -83,9 +83,8 @@ public class BoardPanel extends JPanel {
 	}
 
 	private void isDraw() {
-		if (oneField && twoField &&	threeField
-			&& fourField && fiveField && sixField
-			&& sevenField && eightField && nineField) {
+		if (oneField && twoField && threeField && fourField && fiveField && sixField && sevenField && eightField
+				&& nineField) {
 			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
 		}
 	}
@@ -136,11 +135,14 @@ public class BoardPanel extends JPanel {
 			if (winnerX) {
 				roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
 				playerPanel.setScoreX(playerPanel.getScoreX() + 1); // dodanie +1 do wyniku X
-				playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
+				playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie
+																														// nowego
+																														// wyniku
 				blockTheBoard();
 			}
 			if (playerPanel.getScoreX() == 3) {
-				WinPanel.winMessage.setText("The winner is Player X!"); // sprawdzenie czy osiągnięto wynik 3, jesli tak to info o wygranej
+				WinPanel.winMessage.setText("The winner is Player X!"); // sprawdzenie czy osiągnięto wynik 3, jesli tak
+																		// to info o wygranej
 				startJFrame.setVisible(false);
 				gameFrame.setVisible(false);
 				winFrame.setVisible(true);
@@ -196,7 +198,9 @@ public class BoardPanel extends JPanel {
 		if (winnerO) {
 			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
 			playerPanel.setScoreO(playerPanel.getScoreO() + 1); // dodanie +1 do wyniku O
-			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
+			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie
+																													// nowego
+																													// wyniku
 			blockTheBoard();
 		}
 		if (playerPanel.getScoreO() == 3) { // sprawdzenie czy osiągnięto wynik 3, jeśli tak to info o wygranej
@@ -218,20 +222,20 @@ public class BoardPanel extends JPanel {
 		setLayout(null);
 
 		verticalLine1 = new JLabel(iconV);
-		verticalLine1.setBounds(200,0,10,600);
+		verticalLine1.setBounds(200, 0, 10, 600);
 		verticalLine2 = new JLabel(iconV);
-		verticalLine2.setBounds(410,0,10,600);
+		verticalLine2.setBounds(410, 0, 10, 600);
 		horizontalLine1 = new JLabel(iconH);
-		horizontalLine1.setBounds(0,195,600,10);
+		horizontalLine1.setBounds(0, 195, 600, 10);
 		horizontalLine2 = new JLabel(iconH);
-		horizontalLine2.setBounds(0,395,600,10);
+		horizontalLine2.setBounds(0, 395, 600, 10);
 
 		one = new JButton();
 		one.setBounds(0, 0, 200, 200);
 		one.setOpaque(true);
 		one.addActionListener(e -> {
 			markField(oneField, one);
-			if(!oneField) {
+			if (!oneField) {
 				oneField = true;
 				isWinner();
 			}
@@ -248,7 +252,6 @@ public class BoardPanel extends JPanel {
 			}
 		});
 
-
 		three = new JButton();
 		three.setBounds(0, 400, 200, 200);
 		three.setOpaque(true);
@@ -259,8 +262,6 @@ public class BoardPanel extends JPanel {
 				isWinner();
 			}
 		});
-
-
 
 		four = new JButton();
 		four.setBounds(210, 0, 200, 200);

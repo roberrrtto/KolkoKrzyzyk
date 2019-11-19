@@ -7,8 +7,8 @@ import static toe.tac.tic.Main.startJFrame;
 import static toe.tac.tic.Main.winFrame;
 
 public class WinPanel extends JPanel {
-    Image image;
-    static JButton winMessage;
+	Image image;
+	static JButton winMessage;
 
 	public WinPanel() {
 		setLayout(null);
@@ -22,13 +22,12 @@ public class WinPanel extends JPanel {
 		});
 		add(winMessage);
 	}
-  
 
-    @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        if (image != null) {
-            g.drawImage(image, 0, 0, this);
-        }
-    }
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		if (image != null) {
+			g.drawImage(image, 0, 0, this);
+		}
+	}
 }
