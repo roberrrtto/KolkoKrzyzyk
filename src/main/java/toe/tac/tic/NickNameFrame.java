@@ -6,7 +6,7 @@ public class NickNameFrame extends JFrame {
 
     public NickNameFrame() {
         setSize(600, 735);
-        setTitle("Nick Names");
+        setTitle("Nicknames");
         setResizable(false);
         setLocationRelativeTo(null);
         NickNamePanel nickNamePanel = new NickNamePanel();

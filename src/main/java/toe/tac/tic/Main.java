@@ -19,11 +19,20 @@ public class Main {
 			MusicClass musicObject = new MusicClass();
 			musicObject.playMusic(filePath);
 
+<<<<<<< HEAD
 			// the rest
 			startJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			startJFrame.setVisible(true);
 			gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			gameFrame.setVisible(true);
+=======
+        EventQueue.invokeLater(() -> {
+
+			startJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			startJFrame.setVisible(true);
+        	gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			gameFrame.setVisible(false);
+>>>>>>> 908bceb5e306e45faaafdd6650c7dfe2d2cb96af
 
 			nickNameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			nickNameFrame.setVisible(false);
