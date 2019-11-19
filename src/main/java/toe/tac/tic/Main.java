@@ -13,10 +13,11 @@ public class Main {
     public static void main(String[] args) {
 
         EventQueue.invokeLater(() -> {
-        	startJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+			startJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			startJFrame.setVisible(true);
         	gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			gameFrame.setVisible(true);
+			gameFrame.setVisible(false);
 
 			nickNameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			nickNameFrame.setVisible(false);

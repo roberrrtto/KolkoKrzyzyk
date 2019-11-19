@@ -11,7 +11,7 @@ public class BoardPanel extends JPanel {
 	ImageIcon iconX = new ImageIcon("src/krzyzyk-Ver2 copy.png");
 	ImageIcon iconWinnerX = new ImageIcon("src/krzyzyk-Winner-Ver2 copy.png");
 	ImageIcon iconO = new ImageIcon("src/kolko-Ver2 copy.png");
-	ImageIcon iconWinnerO = new ImageIcon("src//kolko-Winner-Ver2 copy.png");
+	ImageIcon iconWinnerO = new ImageIcon("src/kolko-Winner-Ver2 copy.png");
 	ImageIcon iconH = new ImageIcon("src/kreska-pionowa-Ver2 copy 3.png");
 	ImageIcon iconV = new ImageIcon("src/kreska-pionowa-Ver2 copy.png");
 	ImageIcon iconBackground = new ImageIcon("src/tlo-jasne.png");
@@ -218,9 +218,9 @@ public class BoardPanel extends JPanel {
 		setLayout(null);
 
 		verticalLine1 = new JLabel(iconV);
-		verticalLine1.setBounds(200,0,10,600);
+		verticalLine1.setBounds(200,0,10,620);
 		verticalLine2 = new JLabel(iconV);
-		verticalLine2.setBounds(410,0,10,600);
+		verticalLine2.setBounds(410,0,10,620);
 		horizontalLine1 = new JLabel(iconH);
 		horizontalLine1.setBounds(0,195,600,10);
 		horizontalLine2 = new JLabel(iconH);
