@@ -6,7 +6,7 @@ import java.awt.*;
 public class GameFrame extends JFrame {
     public GameFrame() {
    
-        setSize(620,735);
+        setSize(620,745);
         setTitle("TicTacToe");
         setResizable(false);
         setLocationRelativeTo(null);
