@@ -220,14 +220,14 @@ public class BoardPanel extends JPanel {
 		verticalLine1 = new JLabel(iconV);
 		verticalLine1.setBounds(200,0,10,600);
 		verticalLine2 = new JLabel(iconV);
-		verticalLine2.setBounds(400,0,10,600);
+		verticalLine2.setBounds(410,0,10,600);
 		horizontalLine1 = new JLabel(iconH);
 		horizontalLine1.setBounds(0,195,600,10);
 		horizontalLine2 = new JLabel(iconH);
 		horizontalLine2.setBounds(0,395,600,10);
 
 		one = new JButton();
-		one.setBounds(0, 0, 200, 195);
+		one.setBounds(0, 0, 200, 200);
 		one.setOpaque(true);
 		one.addActionListener(e -> {
 			markField(oneField, one);
@@ -238,7 +238,7 @@ public class BoardPanel extends JPanel {
 		});
 
 		two = new JButton();
-		two.setBounds(0, 205, 200, 190);
+		two.setBounds(0, 200, 200, 200);
 		two.setOpaque(true);
 		two.addActionListener(e -> {
 			markField(twoField, two);
@@ -250,7 +250,7 @@ public class BoardPanel extends JPanel {
 
 
 		three = new JButton();
-		three.setBounds(0, 405, 200, 195);
+		three.setBounds(0, 400, 200, 200);
 		three.setOpaque(true);
 		three.addActionListener(e -> {
 			markField(threeField, three);
@@ -263,7 +263,7 @@ public class BoardPanel extends JPanel {
 
 
 		four = new JButton();
-		four.setBounds(200, 0, 200, 200);
+		four.setBounds(210, 0, 200, 200);
 		four.addActionListener(e -> {
 			markField(fourField, four);
 			if (!fourField) {
@@ -273,7 +273,7 @@ public class BoardPanel extends JPanel {
 		});
 
 		five = new JButton();
-		five.setBounds(200, 200, 200, 200);
+		five.setBounds(210, 200, 200, 200);
 		five.addActionListener(e -> {
 			markField(fiveField, five);
 			if (!fiveField) {
@@ -283,7 +283,7 @@ public class BoardPanel extends JPanel {
 		});
 
 		six = new JButton();
-		six.setBounds(200, 400, 200, 200);
+		six.setBounds(210, 400, 200, 200);
 		if (!sixField) {
 			six.addActionListener(e -> {
 				markField(sixField, six);
@@ -295,7 +295,7 @@ public class BoardPanel extends JPanel {
 		}
 
 		seven = new JButton();
-		seven.setBounds(400, 0, 200, 200);
+		seven.setBounds(420, 0, 200, 200);
 		seven.addActionListener(e -> {
 			markField(sevenField, seven);
 			if (!sevenField) {
@@ -305,7 +305,7 @@ public class BoardPanel extends JPanel {
 		});
 
 		eight = new JButton();
-		eight.setBounds(400, 200, 200, 200);
+		eight.setBounds(420, 200, 200, 200);
 		eight.addActionListener(e -> {
 			markField(eightField, eight);
 			if (!eightField) {
@@ -315,7 +315,7 @@ public class BoardPanel extends JPanel {
 		});
 
 		nine = new JButton();
-		nine.setBounds(400, 400, 200, 200);
+		nine.setBounds(420, 400, 200, 200);
 		nine.addActionListener(e -> {
 			markField(nineField, nine);
 			if (!nineField) {
