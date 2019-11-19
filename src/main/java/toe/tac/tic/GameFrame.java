@@ -1,9 +1,7 @@
 package toe.tac.tic;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 public class GameFrame extends JFrame {
     public GameFrame() {

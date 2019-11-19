@@ -1,21 +1,28 @@
 package toe.tac.tic;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static toe.tac.tic.Main.gameFrame;
-import static toe.tac.tic.Main.startJFrame;
-import static toe.tac.tic.Main.winFrame;
+import static toe.tac.tic.Main.*;
 
 public class BoardPanel extends JPanel {
+
+	ImageIcon iconX = new ImageIcon("src/krzyzyk-Ver2 copy.png");
+	ImageIcon iconWinnerX = new ImageIcon("src/krzyzyk-Winner-Ver2 copy.png");
+	ImageIcon iconO = new ImageIcon("src/kolko-Ver2 copy.png");
+	ImageIcon iconWinnerO = new ImageIcon("src//kolko-Winner-Ver2 copy.png");
+	ImageIcon iconH = new ImageIcon("src/kreska-pionowa-Ver2 copy 3.png");
+	ImageIcon iconV = new ImageIcon("src/kreska-pionowa-Ver2 copy.png");
+	ImageIcon iconBackground = new ImageIcon("src/tlo-jasne.png");
+
 	int test = 0;
 	int test2 = 0;
 	PlayerPanel playerPanel = new PlayerPanel();
 	RoundPanel roundPanel = new RoundPanel();
 	WinPanel winPanel = new WinPanel();
 
+	JLabel horizontalLine1, horizontalLine2, verticalLine1, verticalLine2;
 	JButton one, two, three, four, five, six, seven, eight, nine;
 	List<JButton> buttonList = new ArrayList<>();
 	boolean oneField, twoField, threeField, fourField, fiveField, sixField, sevenField, eightField, nineField;
@@ -49,8 +56,7 @@ public class BoardPanel extends JPanel {
 		eightField = false;
 		nineField = false;
 		for (JButton jb : buttonList) {
-			jb.setText("");
-			jb.setForeground(Color.BLACK);
+			jb.setIcon(iconBackground);
 		}
 	}
 
@@ -67,14 +73,13 @@ public class BoardPanel extends JPanel {
 	public void markField(boolean fieldName, JButton buttonName) { // Wypisanie X lub O jeśli pole jest wolne
 		if (!fieldName) {
 			if (x) {
-				buttonName.setText("X");
+				buttonName.setIcon(iconX);
 				x = false;
 			} else {
-				buttonName.setText("O");
+				buttonName.setIcon(iconO);
 				x = true;
 			}
 		}
-		buttonName.setFont(buttonName.getFont().deriveFont(165f));
 	}
 
 	private void isDraw() {
@@ -86,103 +91,107 @@ public class BoardPanel extends JPanel {
 	}
 
 	public void isWinnerX() { // sprawdzenie czy X wygrywa rundę
-		if (one.getText().equals("X") && two.getText().equals("X") && three.getText().equals("X")) {
-			winnerX = true;
-			one.setForeground(Color.RED);
-			two.setForeground(Color.RED);
-			three.setForeground(Color.RED);
-		} else if (four.getText().equals("X") && five.getText().equals("X") && six.getText().equals("X")) {
-			winnerX = true;
-			four.setForeground(Color.RED);
-			five.setForeground(Color.RED);
-			six.setForeground(Color.RED);
-		} else if (seven.getText().equals("X") && eight.getText().equals("X") && nine.getText().equals("X")) {
-			winnerX = true;
-			seven.setForeground(Color.RED);
-			eight.setForeground(Color.RED);
-			nine.setForeground(Color.RED);
-		} else if (one.getText().equals("X") && four.getText().equals("X") && seven.getText().equals("X")) {
-			winnerX = true;
-			one.setForeground(Color.RED);
-			four.setForeground(Color.RED);
-			seven.setForeground(Color.RED);
-		} else if (two.getText().equals("X") && five.getText().equals("X") && eight.getText().equals("X")) {
-			winnerX = true;
-			two.setForeground(Color.RED);
-			five.setForeground(Color.RED);
-			eight.setForeground(Color.RED);
-		} else if (three.getText().equals("X") && six.getText().equals("X") && nine.getText().equals("X")) {
-			winnerX = true;
-			three.setForeground(Color.RED);
-			six.setForeground(Color.RED);
-			nine.setForeground(Color.RED);
-		} else if (one.getText().equals("X") && five.getText().equals("X") && nine.getText().equals("X")) {
-			winnerX = true;
-			one.setForeground(Color.RED);
-			five.setForeground(Color.RED);
-			nine.setForeground(Color.RED);
-		} else if (seven.getText().equals("X") && five.getText().equals("X") && three.getText().equals("X")) {
-			winnerX = true;
-			seven.setForeground(Color.RED);
-			five.setForeground(Color.RED);
-			three.setForeground(Color.RED);
-		}
-		if (winnerX) {
-			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
-			playerPanel.setScoreX(playerPanel.getScoreX() + 1); // dodanie +1 do wyniku X
-			playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
-			blockTheBoard();
-		}
-		if (playerPanel.getScoreX() == 3) {
-			WinPanel.winMessage.setText("The winner is Player X!"); // sprawdzenie czy osiągnięto wynik 3, jesli tak to info o wygranej
-			startJFrame.setVisible(false);
-			gameFrame.setVisible(false);
-			winFrame.setVisible(true);
-			clearAllFields();
+		try {
+			if (one.getIcon().equals(iconX) && two.getIcon().equals(iconX) && three.getIcon().equals(iconX)) {
+				winnerX = true;
+				one.setIcon(iconWinnerX);
+				two.setIcon(iconWinnerX);
+				three.setIcon(iconWinnerX);
+			} else if (four.getIcon().equals(iconX) && five.getIcon().equals(iconX) && six.getIcon().equals(iconX)) {
+				winnerX = true;
+				four.setIcon(iconWinnerX);
+				five.setIcon(iconWinnerX);
+				six.setIcon(iconWinnerX);
+			} else if (seven.getIcon().equals(iconX) && eight.getIcon().equals(iconX) && nine.getIcon().equals(iconX)) {
+				winnerX = true;
+				seven.setIcon(iconWinnerX);
+				eight.setIcon(iconWinnerX);
+				nine.setIcon(iconWinnerX);
+			} else if (one.getIcon().equals(iconX) && four.getIcon().equals(iconX) && seven.getIcon().equals(iconX)) {
+				winnerX = true;
+				one.setIcon(iconWinnerX);
+				four.setIcon(iconWinnerX);
+				seven.setIcon(iconWinnerX);
+			} else if (two.getIcon().equals(iconX) && five.getIcon().equals(iconX) && eight.getIcon().equals(iconX)) {
+				winnerX = true;
+				two.setIcon(iconWinnerX);
+				five.setIcon(iconWinnerX);
+				eight.setIcon(iconWinnerX);
+			} else if (three.getIcon().equals(iconX) && six.getIcon().equals(iconX) && nine.getIcon().equals(iconX)) {
+				winnerX = true;
+				three.setIcon(iconWinnerX);
+				six.setIcon(iconWinnerX);
+				nine.setIcon(iconWinnerX);
+			} else if (one.getIcon().equals(iconX) && five.getIcon().equals(iconX) && nine.getIcon().equals(iconX)) {
+				winnerX = true;
+				one.setIcon(iconWinnerX);
+				five.setIcon(iconWinnerX);
+				nine.setIcon(iconWinnerX);
+			} else if (seven.getIcon().equals(iconX) && five.getIcon().equals(iconX) && three.getIcon().equals(iconX)) {
+				winnerX = true;
+				seven.setIcon(iconWinnerX);
+				five.setIcon(iconWinnerX);
+				three.setIcon(iconWinnerX);
+			}
+			if (winnerX) {
+				roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
+				playerPanel.setScoreX(playerPanel.getScoreX() + 1); // dodanie +1 do wyniku X
+				playerPanel.scoreDisplay.setText("Score: " + playerPanel.getScoreX() + "-" + playerPanel.getScoreO()); // wypisanie nowego wyniku
+				blockTheBoard();
+			}
+			if (playerPanel.getScoreX() == 3) {
+				WinPanel.winMessage.setText("The winner is Player X!"); // sprawdzenie czy osiągnięto wynik 3, jesli tak to info o wygranej
+				startJFrame.setVisible(false);
+				gameFrame.setVisible(false);
+				winFrame.setVisible(true);
+				clearAllFields();
+			}
+		} catch (NullPointerException e) {
+			e.getMessage();
 		}
 	}
 
 	public void isWinnerO() { // sprawdzenie czy O wygrywa rundę
-		if (one.getText().equals("O") && two.getText().equals("O") && three.getText().equals("O")) {
+		if (one.getIcon().equals(iconO) && two.getIcon().equals(iconO) && three.getIcon().equals(iconO)) {
 			winnerO = true;
-			one.setForeground(Color.BLUE);
-			two.setForeground(Color.BLUE);
-			three.setForeground(Color.BLUE);
-		} else if (four.getText().equals("O") && five.getText().equals("O") && six.getText().equals("O")) {
+			one.setIcon(iconWinnerO);
+			two.setIcon(iconWinnerO);
+			three.setIcon(iconWinnerO);
+		} else if (four.getIcon().equals(iconO) && five.getIcon().equals(iconO) && six.getIcon().equals(iconO)) {
 			winnerO = true;
-			four.setForeground(Color.BLUE);
-			five.setForeground(Color.BLUE);
-			six.setForeground(Color.BLUE);
-		} else if (seven.getText().equals("O") && eight.getText().equals("O") && nine.getText().equals("O")) {
+			four.setIcon(iconWinnerO);
+			five.setIcon(iconWinnerO);
+			six.setIcon(iconWinnerO);
+		} else if (seven.getIcon().equals(iconO) && eight.getIcon().equals(iconO) && nine.getIcon().equals(iconO)) {
 			winnerO = true;
-			seven.setForeground(Color.BLUE);
-			eight.setForeground(Color.BLUE);
-			nine.setForeground(Color.BLUE);
-		} else if (one.getText().equals("O") && four.getText().equals("O") && seven.getText().equals("O")) {
+			seven.setIcon(iconWinnerO);
+			eight.setIcon(iconWinnerO);
+			nine.setIcon(iconWinnerO);
+		} else if (one.getIcon().equals(iconO) && four.getIcon().equals(iconO) && seven.getIcon().equals(iconO)) {
 			winnerO = true;
-			one.setForeground(Color.BLUE);
-			four.setForeground(Color.BLUE);
-			seven.setForeground(Color.BLUE);
-		} else if (two.getText().equals("O") && five.getText().equals("O") && eight.getText().equals("O")) {
+			one.setIcon(iconWinnerO);
+			four.setIcon(iconWinnerO);
+			seven.setIcon(iconWinnerO);
+		} else if (two.getIcon().equals(iconO) && five.getIcon().equals(iconO) && eight.getIcon().equals(iconO)) {
 			winnerO = true;
-			two.setForeground(Color.BLUE);
-			five.setForeground(Color.BLUE);
-			eight.setForeground(Color.BLUE);
-		} else if (three.getText().equals("O") && six.getText().equals("O") && nine.getText().equals("O")) {
+			two.setIcon(iconWinnerO);
+			five.setIcon(iconWinnerO);
+			eight.setIcon(iconWinnerO);
+		} else if (three.getIcon().equals(iconO) && six.getIcon().equals(iconO) && nine.getIcon().equals(iconO)) {
 			winnerO = true;
-			three.setForeground(Color.BLUE);
-			six.setForeground(Color.BLUE);
-			nine.setForeground(Color.BLUE);
-		} else if (one.getText().equals("O") && five.getText().equals("O") && nine.getText().equals("O")) {
+			three.setIcon(iconWinnerO);
+			six.setIcon(iconWinnerO);
+			nine.setIcon(iconWinnerO);
+		} else if (one.getIcon().equals(iconO) && five.getIcon().equals(iconO) && nine.getIcon().equals(iconO)) {
 			winnerO = true;
-			one.setForeground(Color.BLUE);
-			five.setForeground(Color.BLUE);
-			nine.setForeground(Color.BLUE);
-		} else if (seven.getText().equals("O") && five.getText().equals("O") && three.getText().equals("O")) {
+			one.setIcon(iconWinnerO);
+			five.setIcon(iconWinnerO);
+			nine.setIcon(iconWinnerO);
+		} else if (seven.getIcon().equals(iconO) && five.getIcon().equals(iconO) && three.getIcon().equals(iconO)) {
 			winnerO = true;
-			seven.setForeground(Color.BLUE);
-			five.setForeground(Color.BLUE);
-			three.setForeground(Color.BLUE);
+			seven.setIcon(iconWinnerO);
+			five.setIcon(iconWinnerO);
+			three.setIcon(iconWinnerO);
 		}
 		if (winnerO) {
 			roundPanel.setNextRoundButtonVisible(true); // odkrycie przycisku Next round
@@ -208,8 +217,17 @@ public class BoardPanel extends JPanel {
 	public BoardPanel() {
 		setLayout(null);
 
+		verticalLine1 = new JLabel(iconV);
+		verticalLine1.setBounds(200,0,10,600);
+		verticalLine2 = new JLabel(iconV);
+		verticalLine2.setBounds(400,0,10,600);
+		horizontalLine1 = new JLabel(iconH);
+		horizontalLine1.setBounds(0,195,600,10);
+		horizontalLine2 = new JLabel(iconH);
+		horizontalLine2.setBounds(0,395,600,10);
+
 		one = new JButton();
-		one.setBounds(0, 0, 200, 200);
+		one.setBounds(0, 0, 200, 195);
 		one.setOpaque(true);
 		one.addActionListener(e -> {
 			markField(oneField, one);
@@ -220,7 +238,7 @@ public class BoardPanel extends JPanel {
 		});
 
 		two = new JButton();
-		two.setBounds(0, 200, 200, 200);
+		two.setBounds(0, 205, 200, 190);
 		two.setOpaque(true);
 		two.addActionListener(e -> {
 			markField(twoField, two);
@@ -232,7 +250,7 @@ public class BoardPanel extends JPanel {
 
 
 		three = new JButton();
-		three.setBounds(0, 400, 200, 200);
+		three.setBounds(0, 405, 200, 195);
 		three.setOpaque(true);
 		three.addActionListener(e -> {
 			markField(threeField, three);
@@ -317,17 +335,13 @@ public class BoardPanel extends JPanel {
 		buttonList.add(eight);
 		buttonList.add(nine);
 
-		// wypełnienie ArrayList<JButton> buttonList
-//		fieldList.add(oneField);
-//		fieldList.add(twoField);
-//		fieldList.add(threeField);
-//		fieldList.add(fourField);
-//		fieldList.add(fiveField);
-//		fieldList.add(sixField);
-//		fieldList.add(sevenField);
-//		fieldList.add(eightField);
-//		fieldList.add(nineField);
-
+		for (JButton jb : buttonList) {
+			jb.setIcon(iconBackground);
+		}
+		add(horizontalLine1);
+		add(horizontalLine2);
+		add(verticalLine1);
+		add(verticalLine2);
 		add(one);
 		add(two);
 		add(three);
