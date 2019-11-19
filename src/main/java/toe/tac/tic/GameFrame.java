@@ -12,7 +12,7 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
         GamePanel gamePanel = new GamePanel();
         add(gamePanel);
-        Image icon = Toolkit.getDefaultToolkit().getImage("unnamed.png");  
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Robertinho\\eclipse-workspace\\KolkoKrzyzyk\\src\\unnamed.png");  
 		setIconImage(icon);
     }
 }

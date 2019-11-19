@@ -14,7 +14,7 @@ public class WinFrame extends JFrame {
         
         WinPanel winPanel = new WinPanel();
         add(winPanel);
-        Image icon = Toolkit.getDefaultToolkit().getImage("unnamed.png");  
+        Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Robertinho\\eclipse-workspace\\KolkoKrzyzyk\\src\\unnamed.png");  
 		setIconImage(icon);
 	}
 }
