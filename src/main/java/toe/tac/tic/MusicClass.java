@@ -7,6 +7,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class MusicClass {
+	static boolean musicStart = false;
 
 	void playMusic(String musicLocation) {
 
@@ -15,11 +16,11 @@ public class MusicClass {
 			if (musicPath.exists()) {
 				AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
 				Clip clip = AudioSystem.getClip();
-				if (true) {
-					clip.open(audioInput);
-					clip.start();
-					clip.loop(Clip.LOOP_CONTINUOUSLY);
-				}
+
+				clip.open(audioInput);
+				clip.start();
+				clip.loop(Clip.LOOP_CONTINUOUSLY);
+
 			} else
 				System.out.println("THERE IS NO MUSIC");
 		} catch (Exception ex) {

@@ -222,15 +222,15 @@ public class BoardPanel extends JPanel {
 		setLayout(null);
 
 		verticalLine1 = new JLabel(iconV);
-<<<<<<< HEAD
+
 		verticalLine1.setBounds(200, 0, 10, 600);
 		verticalLine2 = new JLabel(iconV);
 		verticalLine2.setBounds(410, 0, 10, 600);
-=======
+
 		verticalLine1.setBounds(200,0,10,620);
 		verticalLine2 = new JLabel(iconV);
 		verticalLine2.setBounds(410,0,10,620);
->>>>>>> 908bceb5e306e45faaafdd6650c7dfe2d2cb96af
+
 		horizontalLine1 = new JLabel(iconH);
 		horizontalLine1.setBounds(0, 195, 600, 10);
 		horizontalLine2 = new JLabel(iconH);
