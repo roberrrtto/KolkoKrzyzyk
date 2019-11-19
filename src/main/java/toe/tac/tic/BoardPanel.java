@@ -8,13 +8,13 @@ import static toe.tac.tic.Main.*;
 
 public class BoardPanel extends JPanel {
 
-	ImageIcon iconX = new ImageIcon("/Users/kavit/Desktop/krzyzyk-Ver2 copy.png");
-	ImageIcon iconWinnerX = new ImageIcon("/Users/kavit/Desktop/krzyzyk-Winner-Ver2 copy.png");
-	ImageIcon iconO = new ImageIcon("/Users/kavit/Desktop/kolko-Ver2 copy.png");
-	ImageIcon iconWinnerO = new ImageIcon("/Users/kavit/Downloads/kolko-Winner-Ver2 copy.png");
-	ImageIcon iconH = new ImageIcon("/Users/kavit/Desktop/kreska-pionowa-Ver2 copy 3.png");
-	ImageIcon iconV = new ImageIcon("/Users/kavit/Desktop/kreska-pionowa-Ver2 copy.png");
-	ImageIcon iconBackground = new ImageIcon("/Users/kavit/Desktop/tlo-jasne.png");
+	ImageIcon iconX = new ImageIcon("src/krzyzyk-Ver2 copy.png");
+	ImageIcon iconWinnerX = new ImageIcon("src/krzyzyk-Winner-Ver2 copy.png");
+	ImageIcon iconO = new ImageIcon("src/kolko-Ver2 copy.png");
+	ImageIcon iconWinnerO = new ImageIcon("src//kolko-Winner-Ver2 copy.png");
+	ImageIcon iconH = new ImageIcon("src/kreska-pionowa-Ver2 copy 3.png");
+	ImageIcon iconV = new ImageIcon("src/kreska-pionowa-Ver2 copy.png");
+	ImageIcon iconBackground = new ImageIcon("src/tlo-jasne.png");
 
 	int test = 0;
 	int test2 = 0;

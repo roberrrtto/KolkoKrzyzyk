@@ -21,7 +21,7 @@ public class NickNamePanel extends JPanel {
 //        xLabel.setBounds(0, 0, 300, 300);
         try {
             img = ImageIO.read(new File(
-                    "/Users/kavit/Downloads/swords.png"));
+                    "src/swords.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

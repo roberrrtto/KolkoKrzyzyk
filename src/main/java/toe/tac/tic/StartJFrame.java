@@ -15,7 +15,7 @@ public class StartJFrame extends JFrame{
 
 		add(startPanel);
 
-		Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Robertinho\\eclipse-workspace\\KolkoKrzyzyk\\src\\unnamed.png");  
+		Image icon = Toolkit.getDefaultToolkit().getImage("src/unnamed.png");
 		setIconImage(icon);
 	}
 }

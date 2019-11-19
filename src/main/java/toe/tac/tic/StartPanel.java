@@ -14,8 +14,8 @@ import static toe.tac.tic.Main.nickNameFrame;
 public class StartPanel extends JPanel {
 
 	BufferedImage img; /// test>>>>>>>
-	ImageIcon playIcon = new ImageIcon("/Users/kavit/Downloads/chevron.png");
-	ImageIcon exitIcon = new ImageIcon("/Users/kavit/Downloads/exit.png");
+	ImageIcon playIcon = new ImageIcon("src/chevron.png");
+	ImageIcon exitIcon = new ImageIcon("src/exit.png");
 	
 	private static JButton play, exit;
 	private JLabel gameName, question, vertical1, vertical2, horizontal1, horizontal2;
@@ -26,7 +26,7 @@ public class StartPanel extends JPanel {
 
 		try {
 			img = ImageIO.read(new File(
-					"/Users/kavit/Downloads/swords.png"));
+					"src/swords.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
