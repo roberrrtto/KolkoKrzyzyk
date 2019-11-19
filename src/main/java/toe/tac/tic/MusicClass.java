@@ -1,13 +1,11 @@
 package toe.tac.tic;
 
-import java.io.File;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import java.io.File;
 
-public class MusicClass {
-	static boolean musicStart = false;
+class MusicClass {
 
 	void playMusic(String musicLocation) {
 
@@ -27,5 +25,4 @@ public class MusicClass {
 			ex.printStackTrace();
 		}
 	}
-
 }

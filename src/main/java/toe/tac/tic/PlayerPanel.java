@@ -3,21 +3,29 @@ package toe.tac.tic;
 import javax.swing.*;
 import java.awt.*;
 
-public class PlayerPanel extends JPanel { // PlayerPanel wyświetla obu graczy + wynik
+import static toe.tac.tic.NickNamePanel.oNickName;
+import static toe.tac.tic.NickNamePanel.xNickName;
 
-    JLabel playerX, playerO, scoreDisplay;
+class PlayerPanel extends JPanel {
+
+    private JLabel playerX, playerO, scoreDisplay;
     private int scoreX;
     private int scoreO;
 
     PlayerPanel() {
-
         setLayout(new BorderLayout());
 
-        playerX = new JLabel("Player 'X'", SwingConstants.CENTER);
+        playerX = new JLabel(xNickName.getText(), SwingConstants.CENTER);
         playerX.setPreferredSize(new Dimension(175,50));
         playerX.setFont(playerX.getFont().deriveFont(17f));
         playerX.setOpaque(true);
-        playerX.setBackground(Color.ORANGE);
+        playerX.setBackground(Color.decode("#E94141"));
+
+        playerO = new JLabel(oNickName.getText(), SwingConstants.CENTER);
+        playerO.setPreferredSize(new Dimension(175,50));
+        playerO.setFont(playerO.getFont().deriveFont(17f));
+        playerO.setOpaque(true);
+        playerO.setBackground(Color.decode("#629ACC"));
 
         scoreDisplay = new JLabel("Score: " + scoreX + "-" + scoreO, SwingConstants.CENTER);
         scoreDisplay.setPreferredSize(new Dimension(250,50));
@@ -25,38 +33,16 @@ public class PlayerPanel extends JPanel { // PlayerPanel wyświetla obu graczy +
         scoreDisplay.setOpaque(true);
         scoreDisplay.setBackground(Color.LIGHT_GRAY);
 
-        playerO = new JLabel("Player 'O'", SwingConstants.CENTER);
-        playerO.setPreferredSize(new Dimension(175,50));
-        playerO.setFont(playerO.getFont().deriveFont(17f));
-        playerO.setOpaque(true);
-        playerO.setBackground(Color.ORANGE);
-
         add(playerX, BorderLayout.LINE_START);
         add(scoreDisplay, BorderLayout.CENTER);
         add(playerO, BorderLayout.LINE_END);
     }
 
-    public JLabel getScoreDisplay() {
-        return scoreDisplay;
-    }
-
-    public void setScoreDisplay(JLabel scoreDisplay) {
-        this.scoreDisplay = scoreDisplay;
-    }
-
-    public int getScoreX() {
-        return scoreX;
-    }
-
-    public void setScoreX(int scoreX) {
-        this.scoreX = scoreX;
-    }
-
-    public int getScoreO() {
-        return scoreO;
-    }
-
-    public void setScoreO(int scoreO) {
-        this.scoreO = scoreO;
-    }
+    JLabel getScoreDisplay() {return scoreDisplay;}
+    int getScoreX() {return scoreX;}
+    void setScoreX(int scoreX) {this.scoreX = scoreX;}
+    int getScoreO() {return scoreO;}
+    void setScoreO(int scoreO) {this.scoreO = scoreO;}
+    JLabel getPlayerX() {return playerX;}
+    JLabel getPlayerO() {return playerO;}
 }

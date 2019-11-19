@@ -2,15 +2,14 @@ package toe.tac.tic;
 
 import javax.swing.*;
 import java.awt.*;
-
 import static toe.tac.tic.Main.startJFrame;
 import static toe.tac.tic.Main.winFrame;
 
-public class WinPanel extends JPanel {
-	Image image;
-	static JButton winMessage;
+class WinPanel extends JPanel {
+	private Image image;
+	private JButton winMessage;
 
-	public WinPanel() {
+	WinPanel() {
 		setLayout(null);
 		image = Toolkit.getDefaultToolkit().createImage("src/win.gif");
 		winMessage = new JButton();
@@ -21,6 +20,10 @@ public class WinPanel extends JPanel {
 			startJFrame.setVisible(true);
 		});
 		add(winMessage);
+	}
+
+	void setWinMessage(String winMessageText) {
+		this.winMessage.setText(winMessageText);
 	}
 
 	@Override

@@ -10,15 +10,15 @@ import java.io.IOException;
 import static toe.tac.tic.Main.gameFrame;
 import static toe.tac.tic.Main.nickNameFrame;
 
-public class NickNamePanel extends JPanel {
+class NickNamePanel extends JPanel {
 
-    BufferedImage img;
+    private ImageIcon icon = new ImageIcon("src/play.png");
+    private BufferedImage img;
     private JLabel nickName;
-    static JButton playGame;
-    private JTextField xNickName, oNickName;
-    ImageIcon icon = new ImageIcon("src/play.png");
+    private static JButton playGame;
+    static JTextField xNickName, oNickName;
 
-    public NickNamePanel() {
+    NickNamePanel() {
         setLayout(null);
 
         try {
@@ -27,7 +27,6 @@ public class NickNamePanel extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         playGame = new JButton();
         playGame.setIcon(icon);
         playGame.setBounds(235,520,icon.getIconWidth(),icon.getIconHeight());
@@ -36,19 +35,21 @@ public class NickNamePanel extends JPanel {
         playGame.addActionListener(e -> {
             gameFrame.setVisible(true);
             nickNameFrame.setVisible(false);
+            gameFrame.getGamePanel().getBoardPanel().getPlayerPanel().getPlayerX().setText(xNickName.getText());
+            gameFrame.getGamePanel().getBoardPanel().getPlayerPanel().getPlayerO().setText(oNickName.getText());
         });
 
         nickName = new JLabel("ENTER YOUR NICKNAMES:");
         nickName.setFont(nickName.getFont().deriveFont(20f));
         nickName.setBounds(170,5,600,45);
 
-        xNickName = new JTextField("       PLAYER X", SwingConstants.CENTER);
+        xNickName = new JTextField("PLAYER X");
+        xNickName.setHorizontalAlignment(JTextField.CENTER);
         xNickName.setBounds(120,50,110,45);
 
-
-        oNickName = new JTextField("       PLAYER O", SwingConstants.CENTER);
+        oNickName = new JTextField("PLAYER O");
+        oNickName.setHorizontalAlignment(JTextField.CENTER);
         oNickName.setBounds(365,50,110,45);
-
 
         add(oNickName);
         add(xNickName);
@@ -59,7 +60,6 @@ public class NickNamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        // paint the background image and scale it to fill the entire space
         g.drawImage(img, 75, 80, 450, 450, null);
     }
 }

@@ -3,16 +3,11 @@ package toe.tac.tic;
 import javax.swing.*;
 import java.awt.*;
 
-public class RoundPanel extends JPanel { //RoundPanel wyświetla numer rundy i dodaje przycissk Next round
+class RoundPanel extends JPanel {
 
-    JLabel roundDisplay;
+    private JLabel roundDisplay;
     JButton nextRoundButton;
     private int roundCounter = 1;
-
-    //metoda do której odwołuje się z poziomu BoardPanel. Służy do chowania/pokazywania przycisku Next round
-    public void setNextRoundButtonVisible(boolean b) {
-        nextRoundButton.setVisible(b);
-    }
 
     RoundPanel() {
         roundDisplay = new JLabel("Round: " + roundCounter, SwingConstants.CENTER);
@@ -29,12 +24,11 @@ public class RoundPanel extends JPanel { //RoundPanel wyświetla numer rundy i d
         add(nextRoundButton);
     }
 
-
-    public int getRoundCounter() {
-        return roundCounter;
+    void setNextRoundButtonVisible(boolean b) { //obsługa przycisku Next round
+        nextRoundButton.setVisible(b);
     }
 
-    public void setRoundCounter(int roundCounter) {
-        this.roundCounter = roundCounter;
-    }
+    int getRoundCounter() {return roundCounter;}
+    void setRoundCounter(int roundCounter) {this.roundCounter = roundCounter;}
+    JLabel getRoundDisplay() {return roundDisplay;}
 }

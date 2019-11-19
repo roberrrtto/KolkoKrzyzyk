@@ -1,33 +1,25 @@
 package toe.tac.tic;
 
-import static toe.tac.tic.Main.nickNameFrame;
-import static toe.tac.tic.Main.startJFrame;
-
-import java.awt.Graphics;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import static toe.tac.tic.Main.nickNameFrame;
+import static toe.tac.tic.Main.startJFrame;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+class StartPanel extends JPanel {
 
-public class StartPanel extends JPanel {
-
-	BufferedImage img; 
-	ImageIcon playIcon = new ImageIcon("src/play.png");
-	ImageIcon exitIcon = new ImageIcon("src/exit.png");
+	private BufferedImage img;
+	private ImageIcon playIcon = new ImageIcon("src/play.png");
+	private ImageIcon exitIcon = new ImageIcon("src/exit.png");
 	
 	private static JButton play, exit;
-	private JLabel gameName, question, vertical1, vertical2, horizontal1, horizontal2;
+	private JLabel gameName, question;
 	
-	public StartPanel() {
-		
+	StartPanel() {
 		setLayout(null);
-
 		try {
 			img = ImageIO.read(new File(
 					"src/swords.png"));
@@ -58,17 +50,14 @@ public class StartPanel extends JPanel {
 		exit.setContentAreaFilled(false);
 		exit.addActionListener(e -> { System.exit(0); });
 
-
 		add(play);
 		add(exit);
 		add(gameName);
-//		add(question);
 	}
 
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		// paints the background image and scale it to fill the entire space
 		g.drawImage(img, 75, 80, 450, 450, null);
 	}
 	
